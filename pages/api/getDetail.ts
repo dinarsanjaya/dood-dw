@@ -67,6 +67,7 @@ export default async function handler(
                 }
             })
         } catch (error) {
+            console.log(`Error: ${error}`)
             throw new Error("Failed get data");
         }
 
