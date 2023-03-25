@@ -50,6 +50,7 @@ export default async function handler(
             const title = getStringBetween("<title>", "</title>", body)
 
             if (pass_md5_url == '') {
+                console.log(`Body: \n${body}`)
                 throw new Error("Failed get data");
             }
 
