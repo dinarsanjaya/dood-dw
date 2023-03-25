@@ -40,9 +40,13 @@ export default async function handler(
         }
 
         const videoCode = url.split("/").slice(-1)[0]
+        console.log(videoCode)
+        console.info(`VideoCode: ${videoCode}`)
         
         try {
             const response = await axiosClient.get(`https://dood.yt/e/${videoCode}`)
+
+            console.log(`Response: ${response}`)
 
             const body = response.data
             const pass_md5_url = getStringBetween("$.get('/pass_md5/", "'", body)
